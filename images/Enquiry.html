@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquiry - Braids Oasis | Get Your Free Quote Today</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+       <!-- Navigation Header -->
+    <header class="bg-dark text-white">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <div class="logo-container">
+                    <span class="logo">BO</span>
+                    <span class="fw-bold fs-4">Braids Oasis</span>
+                </div>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="services.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="enquiry.html">Enquiry</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Search Section -->
+<section class="search-section">
+    <div class="container">
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" 
+                       id="hairstyleSearch" 
+                       class="search-input" 
+                       placeholder="Search for hairstyles... (e.g., box braids, knotless, cornrows)"
+                       autocomplete="off">
+                <button type="button" class="search-btn" id="searchBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    Search
+                </button>
+                <button type="button" class="clear-btn" id="clearBtn" style="display: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Search Suggestions Dropdown -->
+            <div class="search-suggestions" id="searchSuggestions"></div>
+            
+            <!-- Popular Searches -->
+            <div class="popular-searches">
+                <span class="popular-label">Popular:</span>
+                <button type="button" class="popular-tag" onclick="quickSearch('knotless braids')">Knotless Braids</button>
+                <button type="button" class="popular-tag" onclick="quickSearch('box braids')">Box Braids</button>
+                <button type="button" class="popular-tag" onclick="quickSearch('cornrows')">Cornrows</button>
+                <button type="button" class="popular-tag" onclick="quickSearch('goddess braids')">Goddess Braids</button>
+                <button type="button" class="popular-tag" onclick="quickSearch('passion twists')">Passion Twists</button>
+            </div>
+        </div>
+        
+        <!-- Search Results -->
+        <div class="search-results" id="searchResults" style="display: none;">
+            <div class="results-header">
+                <h3 id="resultsTitle">Search Results</h3>
+                <button type="button" class="close-results" id="closeResults">✕</button>
+            </div>
+            <div class="results-grid" id="resultsGrid"></div>
+        </div>
+    </div>
+</section>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="display-3 mb-4">Make an Enquiry</h1>
+            <p class="lead mb-3">Get your free quote and personalized consultation</p>
+            <p>Tell us about your dream style and we'll make it happen!</p>
+        </div>
+    </section>
+
+    <!-- Enquiry Section -->
+    <section class="enquiry-section">
+        <div class="container">
+            <div class="row">
+      <!-- Form Section -->
+       <div class="col-lg-8">
+                    <div class="enquiry-form">
+                        <h2 class="mb-4 text-center">Get Your Free Quote</h2>
+        
+                         <form id="enquiryForm" novalidate>
+                          <!-- Personal Information -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="fullName" class="form-label">Full Name<span class="required-asterisk">*</span></label>
+                                        <input type="text" class="form-control" id="fullName" name="fullName" 
+                                               placeholder="Your name and surname" required>
+                                        <div class="error-message" id="fullNameError"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="email" class="form-label">Email Address<span class="required-asterisk">*</span></label>
+                                        <input type="email" class="form-control" id="email" name="email" 
+                                               placeholder="you@example.com" required>
+                                        <div class="error-message" id="emailError"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="phone" class="form-label">Phone Number</label>
+                                        <input type="tel" class="form-control" id="phone" name="phone" 
+                                               placeholder="+27 XX XXX XXXX">
+                                        <div class="error-message" id="phoneError"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="location" class="form-label">Location/Area</label>
+                                        <input type="text" class="form-control" id="location" name="location" 
+                                               placeholder="e.g., Mfuleni, Cape Town">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Service Information -->
+                            <h4 class="mb-3 mt-4" style="color: var(--brand-primary);">Service Details</h4>
+                            
+                            <div class="form-group">
+                                <label for="serviceType" class="form-label">Service Interested In<span class="required-asterisk">*</span></label>
+                                <select class="form-select" id="serviceType" name="serviceType" required>
+                                    <option value="">Select a service...</option>
+                                    <option value="knotless-braids">Knotless Braids</option>
+                                    <option value="goddess-braids">Goddess/Boho Braids</option>
+                                    <option value="french-curl">French Curl Braids</option>
+                                    <option value="island-twists">Island Twists</option>
+                                    <option value="mini-twists">Mini Twists</option>
+                                    <option value="marley-twists">Marley Twists</option>
+                                    <option value="passion-twists">Passion Twists</option>
+                                    <option value="retwist">Retwist/Touch-up</option>
+                                    <option value="consultation">Just a consultation</option>
+                                    <option value="other">Other (please specify in message)</option>
+                                </select>
+                                <div class="error-message" id="serviceTypeError"></div>
+                            </div>
+
+                            <!-- Quick Service Selection -->
+                            <div class="form-group">
+                                <label class="form-label">Or click a quick option:</label>
+                                <div class="text-center">
+                                    <button type="button" class="quick-service-btn" onclick="selectQuickService('knotless-braids')">Knotless Braids</button>
+                                    <button type="button" class="quick-service-btn" onclick="selectQuickService('goddess-braids')">Goddess Braids</button>
+                                    <button type="button" class="quick-service-btn" onclick="selectQuickService('french-curl')">French Curls</button>
+                                    <button type="button" class="quick-service-btn" onclick="selectQuickService('retwist')">Retwist</button>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="hairLength" class="form-label">Desired Length</label>
+                                        <select class="form-select" id="hairLength" name="hairLength">
+                                            <option value="">Select length...</option>
+                                            <option value="short">Short (Shoulder length)</option>
+                                            <option value="medium">Medium (Mid-back)</option>
+                                            <option value="long">Long (Lower-back)</option>
+                                            <option value="extra-long">Extra Long (Waist length)</option>
+                                            <option value="custom">Custom length</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="hairProvided" class="form-label">Hair Extensions</label>
+                                        <select class="form-select" id="hairProvided" name="hairProvided">
+                                            <option value="">Select option...</option>
+                                            <option value="bring-own">I'll bring my own hair</option>
+                                            <option value="salon-provides">Please provide hair (additional cost)</option>
+                                            <option value="need-advice">I need advice on what to buy</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="preferredDate" class="form-label">Preferred Date</label>
+                                        <input type="date" class="form-control" id="preferredDate" name="preferredDate">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="preferredTime" class="form-label">Preferred Time</label>
+                                        <select class="form-select" id="preferredTime" name="preferredTime">
+                                            <option value="">Select time...</option>
+                                            <option value="morning">Morning (9AM - 12PM)</option>
+                                            <option value="afternoon">Afternoon (12PM - 4PM)</option>
+                                            <option value="evening">Evening (4PM - 6PM)</option>
+                                            <option value="flexible">I'm flexible</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message" class="form-label">Additional Message</label>
+                                <textarea class="form-control" id="message" name="message" rows="4" 
+                                          placeholder="Tell us about your specific requirements, inspiration photos you have, any questions, or other details that would help us give you the best quote..."></textarea>
+                                <div class="char-counter">
+                                    <span id="charCount">0</span>/500 characters
+                                </div>
+                            </div>
+
+                            <!-- Budget Range -->
+                            <div class="form-group">
+                                <label for="budget" class="form-label">Budget Range (Optional)</label>
+                                <select class="form-select" id="budget" name="budget">
+                                    <option value="">Select budget range...</option>
+                                    <option value="under-300">Under R300</option>
+                                    <option value="300-500">R300 - R500</option>
+                                    <option value="500-700">R500 - R700</option>
+                                    <option value="700-1000">R700 - R1000</option>
+                                    <option value="over-1000">Over R1000</option>
+                                    <option value="flexible">Budget is flexible</option>
+                                </select>
+                            </div>
+                            
+                            <!-- Price Estimate Display -->
+                            <div id="priceEstimate" class="price-estimate">
+                                <h5>💰 Estimated Price Range</h5>
+                                <p id="estimateText" class="mb-0"></p>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">
+                                <span class="loading-spinner" id="loadingSpinner"></span>
+                                <span id="submitText">Get My Free Quote</span>
+                            </button>
+                        </form>
+                         
+                         <!-- Information Sidebar -->
+                <div class="col-lg-4">
+                    <!-- Quick Info -->
+                    <div class="info-sidebar">
+                        <h4 class="text-center mb-4" style="color: var(--brand-primary);">Why Choose Us?</h4>
+                        
+                        <div class="info-card">
+                            <div class="info-icon">⚡</div>
+                            <h5>Quick Response</h5>
+                            <p class="mb-0">We respond to all enquiries within 2 hours during business hours</p>
+                        </div>
+                        
+                        <div class="info-card">
+                            <div class="info-icon">💰</div>
+                            <h5>Free Quotes</h5>
+                            <p class="mb-0">No hidden fees - get accurate pricing upfront</p>
+                        </div>
+                        
+                        <div class="info-card">
+                            <div class="info-icon">🎨</div>
+                            <h5>Expert Stylists</h5>
+                            <p class="mb-0">Professional team with years of braiding experience</p>
+                        </div>
+                        
+                        <div class="info-card">
+                            <div class="info-icon">✨</div>
+                            <h5>Quality Guarantee</h5>
+                            <p class="mb-0">We stand behind our work with satisfaction guaranteed</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Info -->
+                    <div class="info-sidebar">
+                        <h4 class="text-center mb-4" style="color: var(--brand-primary);">Need Help?</h4>
+                        
+                        <div class="text-center">
+                            <p><strong>Call us directly:</strong><br>
+                            <a href="tel:+27211546078" style="color: var(--brand-secondary); font-size: 1.2rem;">+27 21 154 6078</a></p>
+                            
+                            <p><strong>Email us:</strong><br>
+                            <a href="mailto:hello@braidsoasis.com" style="color: var(--brand-secondary);">hello@braidsoasis.com</a></p>
+                        </div>
+                    </div>
+
+                    <!-- Volunteer Form -->
+                     <section class="vol-section">
+                        <div class="form-container">
+            <h2>Volunteer Interest Form</h2>
+                <form id="volunteerForm" novalidate>
+                  <input type="hidden" name="form_type" value="volunteer">
+
+                 <label>Full Name</label>
+                <input type="text" name="name" id="name" class="form-container" placeholder="Name and Surname" required>
+
+                <label>Email</label>
+                <input type="email" name="email" id="email" class="form-container" placeholder="example@example.com" required >
+
+                 <label>Phone</label>
+                 <input type="tel" name="phone" class="form-container" id="phone" placeholder="+27XXXXXXXXX" required>
+
+                <label>Why are you interested in volunteering?</label>
+                <textarea name="interest" class="form-container"></textarea>
+
+                <label>Skills you'd like to share</label>
+                 <textarea name="skills" class="form-container"></textarea>
+
+                <label>Areas of interest</label>
+                    <select name="area" class="form-container">
+                        <option>Event Support</option>
+                        <option>Fundraising</option>
+                        <option>Social Media</option>
+                        <option>Logistics</option>
+                         <option>Other</option>
+                    </select>
+
+                 <label>Availability</label>
+                 <input type="text" name="availability" class="form-container" placeholder="e.g. Weekends, 10am–2pm">
+
+                 <button type="submit">Submit Volunteer Form</button>
+     </form>
+  </div>
+
+        <!-- Sponsor Form -->
+        <div class="form-container">
+              <h2>Sponsorship Interest Form</h2>
+                    <form  id="sponsorForm" novalidate>
+                     <input type="hidden" name="form_type" value="sponsor">
+
+                     <label>Full Name</label>
+                     <input type="text" name="name" class="form-container" id="name" required>
+                     
+
+                      <label>Company/Organization</label>
+                     <input type="text" name="company" id="name" class="form-container" required>
+
+                    <label>Email</label>
+                    <input type="email" class="form-container" id="email" name="email" 
+                                               placeholder="you@example.com" required>
+
+                     <label>Phone</label>
+                     <input type="tel" name="phone" id="phone"class="form-container" placeholder="+27XXXXXXXXX" required>
+
+                     <label>Website or Social Media</label>
+                     <input type="url" name="website" class="form-container" required>
+
+                     <label>Why are you interested in sponsoring?</label>
+                    <textarea name="reason" class="form-container"></textarea>
+
+                     <label>Type of sponsorship</label>
+                        <select name="type" class="form-container">
+                          <option>Financial Support</option>
+                         <option>In-kind Donations</option>
+                         <option>Services</option>
+                         <option>Promotional Partnership</option>
+                        </select>
+
+                 <label>Preferred sponsorship level</label>
+                    <select name="level" class="form-container">
+                        <option>Bronze</option>
+                        <option>Silver</option>
+                        <option>Gold</option>
+                        <option>Platinum</option>
+                         <option>Other</option>
+                    </select>
+
+                     <label>How would you like to be recognized?</label>
+                    <textarea name="recognition" class="form-container"></textarea>
+
+            <button type="submit">Submit Sponsorship Form</button>
+        </form>
+     </div>
+     </section>
+  
+
+  <!-- Business Hours -->
+                    <div class="hours-table">
+                        <table class="table table-borderless mb-0">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="text-center">Business Hours</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Monday - Friday</strong></td>
+                                    <td>9:00 AM - 6:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Saturday</strong></td>
+                                    <td>9:00 AM - 5:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Sunday</strong></td>
+                                    <td class="closed">Closed</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                   
+                </div>
+            </div>
+       </div>
+            </div>
+      </section>
+      
+      
+      <!-- Footer -->
+    <footer class="footer-content text-center">
+        <div class="container">
+            <p class="mb-2">Street parking available • Lift access • Hair is provided</p>
+            <p class="mb-0">&copy; 2025 Braids Oasis | Affordable Beauty, Lasting Confidence</p>
+        </div>
+    </footer>
+    
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Braids Oasis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header class="bg-dark text-white">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <div class="logo-container">
+                    <span class="logo">BO</span>
+                    <span class="fw-bold fs-4">Braids Oasis</span>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="services.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="enquiry.html">Enquiry</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Search Section -->
+<section class="search-section">
+    <div class="container">
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" 
+                       id="hairstyleSearch" 
+                       class="search-input" 
+                       placeholder="Search for hairstyles... (e.g., box braids, knotless, cornrows)"
+                       autocomplete="off">
+                <button type="button" class="search-btn" id="searchBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    Search
+                </button>
+                <button type="button" class="clear-btn" id="clearBtn" style="display: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Search Suggestions Dropdown -->
+            <div class="search-suggestions" id="searchSuggestions"></div>
+            
+            <!-- Popular Searches -->
+            <div class="popular-searches">
+                <span class="popular-label">Popular:</span>
+                <button type="button" class="popular-tag" onclick="quickSearch('knotless braids')">Knotless Braids</button>
+                <button type="button" class="popular-tag" onclick="quickSearch('box braids')">Box Braids</button>
+                <button type="button" class="popular-tag" onclick="quickSearch('cornrows')">Cornrows</button>
+                <button type="button" class="popular-tag" onclick="quickSearch('passion twists')">Passion Twists</button>
+                <button type="button" class="popular-tag" onclick="quickSearch('kids braiding')">Kids Braiding</button>
+                <button type="button" class="popular-tag" onclick="quickSearch('protective styles')">Protective Styles</button>
+            </div>
+        </div>
+        
+        <!-- Search Results -->
+        <div class="search-results" id="searchResults" style="display: none;">
+            <div class="results-header">
+                <h3 id="resultsTitle">Search Results</h3>
+                <button type="button" class="close-results" id="closeResults">✕</button>
+            </div>
+            <div class="results-grid" id="resultsGrid"></div>
+        </div>
+    </div>
+</section>
+
+    <main class="container">
+      <!-- Welcome Section -->
+      <section>
+        <h2>Welcome to Braids Beauty Salon</h2>
+        <p>We specialize in creating stunning, affordable, and long-lasting braids that bring out your natural beauty. Our professional stylists are dedicated to giving you a comfortable and positive experience from start to finish.</p>
+        
+        
+        <!-- Image showing braids style -->
+          <h3>🌟 Beautiful Braids Await You! 🌟</h3>
+          <div class="text-center mb-4">
+            <img id="heroImage" src="Images/e007d7b7-99f7-4439-a8b0-50b40ad5e2fc.JPEG.jfif" alt="Beautiful Boho Style Braids" 
+                class="hero-image">
+          </div>
+        
+        <!-- Call-to-action buttons -->
+          <div class="text-center">
+             <a href="services.html" class="start-btn">Get Started</a>
+            <a href="contact.html" class="start-btn">Book Now</a>
+          </div>
+          
+      </section>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="script.js"></script>
+
+       <!-- Footer Section -->
+    <footer class="footer-content text-center">
+        <div class="container">
+            <p class="mb-2">Street parking available • Lift access • Hair is provided</p>
+            <p class="mb-0">&copy; 2025 Braids Oasis | Affordable Beauty, Lasting Confidence</p>
+        </div>
+    </footer>
+      
+</body>
+</html>
